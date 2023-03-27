@@ -6,109 +6,106 @@ import enums.Size;
 
 public class Item {
 	
-}
-	
-	private String name;
-	private ItemType itemType;
-	private Category category;
-	private Long quantity;
-	private Double price;
-	private Size size;
-	
-	public Item(String name, ItemType type, Category category, Long quantity, Double price, Size size) {
-		super();
-		this.name = name;
-		this.itemType = itemType;
-		this.category = category;
-		this.quantity = quantity;
-		this.price = price;
-		this.size = size;
-		public Item(Long id, String name, ItemType itemType, Category category, Long quantity) {
-	        this.id = id;
-	        this.name = name;
-	        this.itemType = itemType;
-	        this.category = category;
-	        this.quantity = quantity;
-	    }
+	private Long id;
+    private String name;
+    private ItemType itemType;
+    private Category category;
+    private Size size;
+    private Double price;
+    private Long quantityInStock;
 
-	    public Item(String name, ItemType itemType, Double price, Long quantity) {
-	        this.name = name;
-	        this.itemType = itemType;
-	        this.price = price;
-	        this.quantity = quantity;
-	    }
+    public Item(Long id, String name, ItemType itemType, Category category, Double price, Long quantityInStock) {
+        this.id = id;
+        this.name = name;
+        this.itemType = itemType;
+        this.category = category;
+        this.price = price;
+        this.quantityInStock = quantityInStock;
+    }
 
-	    public Long getId() {
-	        return id;
-	    }
+    public Item(Long id, String name, ItemType itemType, Category category, Long quantityInStock) {
+        this.id = id;
+        this.name = name;
+        this.itemType = itemType;
+        this.category = category;
+        this.quantityInStock = quantityInStock;
+    }
 
-	    public void setId(Long id) {
-	        this.id = id;
-	    }
+    public Item(String name, ItemType itemType, Double price, Long quantityInStock) {
+        this.name = name;
+        this.itemType = itemType;
+        this.price = price;
+        this.quantityInStock = quantityInStock;
+    }
 
-	    public String getName() {
-	        return name;
-	    }
+    public Long getId() {
+        return id;
+    }
 
-	    public void setName(String name) {
-	        this.name = name;
-	    }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	    public ItemType getItemType() {
-	        return itemType;
-	    }
+    public String getName() {
+        return name;
+    }
 
-	    public void setItemType(ItemType itemType) {
-	        this.itemType = itemType;
-	    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	    public Category getCategory() {
-	        return category;
-	    }
+    public ItemType getItemType() {
+        return itemType;
+    }
 
-	    public void setCategory(Category category) {
-	        this.category = category;
-	    }
+    public void setItemType(ItemType itemType) {
+        this.itemType = itemType;
+    }
 
-	    public Size getSize() {
-	        return size;
-	    }
+    public Category getCategory() {
+        return category;
+    }
 
-	    public void setSize(Size size) {
-	        this.size = size;
-	    }
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
-	    public Double getPrice() {
-	        return price;
-	    }
+    public Size getSize() {
+        return size;
+    }
 
-	    public void setPrice(Double price) {
-	        this.price = price;
-	    }
+    public void setSize(Size size) {
+        this.size = size;
+    }
 
-	    public Long getQuantity() {
-	        return quantity;
-	    }
+    public Double getPrice() {
+        return price;
+    }
 
-	    public void setQuantity(Long quantity) {
-	        this.quantity = quantity;
-	    }
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
-	    @Override
-	    public String toString() {
-	        return
-	                "name='" + name + '\'' +
-	                ", type=" + itemType +
-	                ", category=" + category +
-	                ", size=" + size +
-	                ", price=" + price;
-	    }
+    public Long getQuantityInStock() {
+        return quantityInStock;
+    }
 
-	
-	
-	
-	
-	
-	
+    public void setQuantityInStock(Long quantityInStock) {
+        this.quantityInStock = quantityInStock;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "name='" + name + '\'' +
+                ", type=" + itemType +
+                ", category=" + category +
+                ", size=" + size +
+                ", price=" + price;
+    }
+
+    public Double getPrice(Size size) {
+        return getPrice();
+    }
 
 }

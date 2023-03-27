@@ -4,7 +4,7 @@ public enum ItemType {
 	
 	PIZZA,
 	TOPPINGS,
-	SIDES,
+	SIDE
 	
 
 }

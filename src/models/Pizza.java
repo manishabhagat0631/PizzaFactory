@@ -4,71 +4,57 @@ import enums.Category;
 import enums.ItemType;
 import enums.Size;
 
-public class Pizza extends Item{
-	
+public class Pizza extends Item {
+
 	private Size size;
 	private Double regularPrice;
 	private Double mediumPrice;
-	private Double largeprice;
+	private Double largePrice;
 	private Double price;
-	
-	public Pizza(String name, ItemType type, Category category, Long quantity, Double price, Size size, Size size2,
-			Double regularPrice, Double mediumPrice, Double largeprice) {
-		super(name, type, category, quantity, price, size);
-		size = size2;
+
+	public Pizza(Long id, String name, Size size, ItemType itemType, Category category, Double regularPrice,
+			Double mediumPrice, Double largePrice, Long quantity) {
+		super(id, name, itemType, category, quantity);
 		this.regularPrice = regularPrice;
 		this.mediumPrice = mediumPrice;
-		this.largeprice = largeprice;
+		this.largePrice = largePrice;
 		this.size = size;
 		this.price = getPrice(size);
 	}
 
-	public Pizza(Long id, String name, ItemType itemType, Category category, Double regularPrice, Double mediumPrice, Double largePrice, Long quantity) {
-        super(id, name, itemType, category, quantity);
-        this.regularPrice = regularPrice;
-        this.mediumPrice = mediumPrice;
-        this.largeprice = largePrice;
-    }
+	public Pizza(Long id, String name, ItemType itemType, Category category, Double regularPrice, Double mediumPrice,
+			Double largePrice, Long quantity) {
+		super(id, name, itemType, category, quantity);
+		this.regularPrice = regularPrice;
+		this.mediumPrice = mediumPrice;
+		this.largePrice = largePrice;
+	}
 
-    public Double getPrice(Size size) {
-        switch (size.toString()) {
-            case "REGULAR":
-                return regularPrice;
+	@Override
+	public Double getPrice(Size size) {
+		switch (size.toString()) {
+		case "REGULAR":
+			return regularPrice;
 
-            case "MEDIUM":
-                return mediumPrice;
+		case "MEDIUM":
+			return mediumPrice;
 
-            case "LARGE":
-                return largeprice;
+		case "LARGE":
+			return largePrice;
 
-            default:
-                return this.price;
-        }
-    }
+		default:
+			return this.price;
+		}
+	}
 
-    @Override
-    public String toString() {
-        return "Pizza {" +
-                " name=" + super.getName() +
-                " ItemType=" + super.getItemType() +
-                ", regularPrice=" + regularPrice +
-                ", mediumPrice=" + mediumPrice +
-                ", largePrice=" + largeprice +
-                '}';
-    }
-
-
-
-    
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
+	@Override
+	public String toString() {
+		return "Pizza {" + 
+				" name=" + super.getName() + "\n" +
+				" ItemType=" + super.getItemType() + "\n"+ 
+				", regularPrice=" + regularPrice + "\n" + 
+				", mediumPrice=" + mediumPrice + "\n" + 
+				", largePrice="+ largePrice + "\n" + '}';
+	}
 
 }
